@@ -6,7 +6,7 @@ export default class Test extends Component{
     }
     componentDidMount(){
         //fetch("/test")
-        axios.get("/test").then(res=>{
+        axios.get("/api/test").then(res=>{
             console.log(res);
                 this.setState({
                     user:res.data,
