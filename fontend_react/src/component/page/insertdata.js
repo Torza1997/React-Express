@@ -31,7 +31,7 @@ export default class Test extends Component{
     Delete=(e)=>{
        axios.delete(`/api/delete/${e.target.id}`)
         .then(this.getUSer)
-        .then(res => {console.log(res)})
+        .catch(err => {console.error(err)});
     }
     Edite=()=>{
         alert("Edite");
@@ -40,7 +40,7 @@ export default class Test extends Component{
         const { UserInsert } = this.state;
         axios.post('/api/add',UserInsert)
             .then(this.getUSer)
-            .catch(err => console.error(err))
+            .catch(err => console.error(err));
          
     }
     render(){
