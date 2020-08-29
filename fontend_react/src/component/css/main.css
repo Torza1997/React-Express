@@ -35,3 +35,26 @@
     transition: .5s;
     background:rgb(255, 225, 124);
   }
+  .user-form{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-form > input{
+    width:150px;
+    height: 20px;
+  }
+  .user-form >h3{
+    margin:0 10px;
+  }
+  .user-form >a{
+    background-color: #ffe00f;
+    padding: 10px;
+    margin:0 10px;
+    border-radius: 20px;
+  }
+  .user-form >a:hover{
+    cursor: pointer;
+    background-color:#ffed77;
+  }

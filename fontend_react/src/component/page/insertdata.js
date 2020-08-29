@@ -3,7 +3,15 @@ import axios from 'axios';
 import "../css/main.css";
 export default class Test extends Component{
     state = {
-        Users:[]
+        Users:[],
+        UserInsert:{
+            name: '',
+            nickname:'',
+            email:'',
+            phone:'',
+
+        },
+        callback:''
     }
     componentDidMount(){
         this.getUSer();
@@ -27,11 +35,30 @@ export default class Test extends Component{
     Edite=()=>{
         alert("Edite");
     }
+   addData =()=>{
+        const { UserInsert } = this.state;
+        const res = axios.post('/api/add',UserInsert)
+            .then(this.getUSer)
+            .catch(err => console.error(err))
+         
+    }
     render(){
+        const {Users,UserInsert} =this.state;
         return(
             <div style={{textAlign:"center"}}>
             <h1>USER</h1>
-                <ul>
+                <ul>    
+                    <div className ="user-form">
+                        <h3>name</h3>
+                        <input value={UserInsert.name} onChange ={e => this.setState({UserInsert:{... UserInsert ,name:e.target.value}})}></input>
+                        <h3>nickname</h3>
+                        <input value={UserInsert.nickname} onChange ={e => this.setState({UserInsert:{... UserInsert ,nickname:e.target.value}})}></input>
+                        <h3>email</h3>
+                        <input value={UserInsert.email} onChange ={e => this.setState({UserInsert:{... UserInsert ,email:e.target.value}})}></input>
+                        <h3>phone</h3>
+                        <input value={UserInsert.phone} onChange ={e => this.setState({UserInsert:{... UserInsert ,phone:e.target.value}})}></input>
+                        <a onClick ={this.addData} >add</a>
+                    </div>
                     <div className ="table-user">
                         <table>
                             <thead>

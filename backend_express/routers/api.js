@@ -9,7 +9,7 @@ var con = mysql.createConnection({
   });
   con.connect(function(err) {
     if (err) throw err;
-    console.log("Connected!");
+    console.log("Mysql Connected!");
   });
 
 const allUser = 'SELECT * FROM test'
@@ -27,7 +27,14 @@ router.get('/get/data',(req,res)=>{
 });
 
 router.post('/add',(req,res)=>{
-    res.send("hi,add api:"+req.query.id);
+    const InsertUserData = `INSERT INTO test (name,nickname,email,phone) VALUES('${req.body.name}','${req.body.nickname}','${req.body.email}','${req.body.phone}')`
+    con.query(InsertUserData,(err,results) =>{
+        if(err){
+            return res.send(err);
+        }else{
+            return res.send("Insert user data success!");
+        }
+    })
 })
 router.delete('/delete/:id',(req,res)=>{
     res.send(req.params.id);
