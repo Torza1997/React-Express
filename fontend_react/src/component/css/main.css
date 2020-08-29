@@ -34,6 +34,7 @@
   table a:hover{
     transition: .5s;
     background:rgb(255, 225, 124);
+    cursor: pointer;
   }
   .user-form{
     margin: 10px 0;

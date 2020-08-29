@@ -12,7 +12,7 @@ var con = mysql.createConnection({
     console.log("Mysql Connected!");
   });
 
-const allUser = 'SELECT * FROM test'
+const allUser = 'SELECT * FROM test';
 //fetch data from mysql 
 router.get('/get/data',(req,res)=>{
     con.query(allUser,(err,results)=>{
@@ -27,7 +27,7 @@ router.get('/get/data',(req,res)=>{
 });
 
 router.post('/add',(req,res)=>{
-    const InsertUserData = `INSERT INTO test (name,nickname,email,phone) VALUES('${req.body.name}','${req.body.nickname}','${req.body.email}','${req.body.phone}')`
+    const InsertUserData = `INSERT INTO test (name,nickname,email,phone) VALUES('${req.body.name}','${req.body.nickname}','${req.body.email}','${req.body.phone}')`;
     con.query(InsertUserData,(err,results) =>{
         if(err){
             return res.send(err);
@@ -37,6 +37,13 @@ router.post('/add',(req,res)=>{
     })
 })
 router.delete('/delete/:id',(req,res)=>{
-    res.send(req.params.id);
+    const Delete_Data_ByID = `DELETE FROM test WHERE id = '${req.params.id}'`
+    con.query(Delete_Data_ByID,(err,results)=>{
+        if(err){
+           res.send(err); 
+        }else{
+            res.send("delete success!");
+        }
+    })
 })
 module.exports = router;

@@ -10,8 +10,7 @@ export default class Test extends Component{
             email:'',
             phone:'',
 
-        },
-        callback:''
+        }
     }
     componentDidMount(){
         this.getUSer();
@@ -29,15 +28,17 @@ export default class Test extends Component{
         .catch(err => console.error(err))*/
         
     }
-    Delete=()=>{
-        alert("delete");
+    Delete=(e)=>{
+       axios.delete(`/api/delete/${e.target.id}`)
+        .then(this.getUSer)
+        .then(res => {console.log(res)})
     }
     Edite=()=>{
         alert("Edite");
     }
    addData =()=>{
         const { UserInsert } = this.state;
-        const res = axios.post('/api/add',UserInsert)
+        axios.post('/api/add',UserInsert)
             .then(this.getUSer)
             .catch(err => console.error(err))
          
@@ -80,7 +81,7 @@ export default class Test extends Component{
                                     <td>{user.nickname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.phone}</td>
-                                    <td><a onClick = {this.Delete}>Delete</a></td>
+                                    <td><a id ={user.id} onClick = {this.Delete}>Delete</a></td>
                                     <td><a onClick = {this.Edite}>Edite</a></td>
                                 </tr>
                                 )}
