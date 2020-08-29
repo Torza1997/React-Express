@@ -29,9 +29,10 @@ export default class Test extends Component{
         
     }
     Delete=(e)=>{
-       axios.delete(`/api/delete/${e.target.id}`)
-        .then(this.getUSer)
-        .catch(err => {console.error(err)});
+        const _0x3d90=['target','/api/delete/','then','catch','delete','error','getUSer'];
+        (function(_0x342e9e,_0x3d9045){var _0x426974=function(_0x58e456){while(--_0x58e456){_0x342e9e['push'](_0x342e9e['shift']());}};_0x426974(++_0x3d9045);}(_0x3d90,0x13f));
+        const _0x4269=function(_0x342e9e,_0x3d9045){_0x342e9e=_0x342e9e-0x0;var _0x426974=_0x3d90[_0x342e9e];return _0x426974;};
+        axios[_0x4269('0x0')](_0x4269('0x4')+e[_0x4269('0x3')]['id'])[_0x4269('0x5')](this[_0x4269('0x2')])[_0x4269('0x6')](_0x4673f6=>{console[_0x4269('0x1')](_0x4673f6);});
     }
     Edite=()=>{
         alert("Edite");

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mysql = require('mysql');
+const jwt =require('jsonwebtoken');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -45,5 +46,19 @@ router.delete('/delete/:id',(req,res)=>{
             res.send("delete success!");
         }
     })
+})
+
+//test 
+router.post('/jwt/token',(req,res)=>{
+  const user = {
+      id:1,
+      username:"tor thanatos",
+      email:'tor@gmail.com'
+  }
+  jwt.sign({user:user},'secretkey',(err,token)=>{
+      res.json({
+          token
+      })
+  });
 })
 module.exports = router;
