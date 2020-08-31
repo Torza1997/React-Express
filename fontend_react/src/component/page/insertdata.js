@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import "../css/main.css";
+const jwt_decode = require('jwt-decode');
 export default class Test extends Component{
     state = {
         Users:[],
@@ -44,6 +45,13 @@ export default class Test extends Component{
             .catch(err => console.error(err));
          
     }
+    Test_jwt_decode=_=>{
+        axios.post('/api/jwt/token')
+            .then(res=>{
+                const user_ = jwt_decode(res.data.token);
+                console.log(user_.user.username);
+            })
+    }
     render(){
         const {Users,UserInsert} =this.state;
         return(
@@ -83,7 +91,7 @@ export default class Test extends Component{
                                     <td>{user.email}</td>
                                     <td>{user.phone}</td>
                                     <td><a id ={user.id} onClick = {this.Delete}>Delete</a></td>
-                                    <td><a onClick = {this.Edite}>Edite</a></td>
+                                    <td><a onClick = {this.Test_jwt_decode}>Edite</a></td>
                                 </tr>
                                 )}
                             </tbody>     

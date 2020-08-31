@@ -48,7 +48,7 @@ router.delete('/delete/:id',(req,res)=>{
     })
 })
 
-//test 
+//test jwt-token
 router.post('/jwt/token',(req,res)=>{
   const user = {
       id:1,
