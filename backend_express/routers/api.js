@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require('mysql');
 const jwt =require('jsonwebtoken');
-var con = mysql.createConnection({
+const mysql = require('mysql');
+const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
@@ -10,8 +10,9 @@ var con = mysql.createConnection({
   });
   con.connect(function(err) {
     if (err) throw err;
-    console.log("Mysql Connected!");
+    console.log("connected");
   });
+
 
 const allUser = 'SELECT * FROM test';
 //fetch data from mysql 
@@ -61,4 +62,7 @@ router.post('/jwt/token',(req,res)=>{
       })
   });
 })
-module.exports = router;
+
+
+
+module.exports = {router,con};

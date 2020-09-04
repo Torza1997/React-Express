@@ -90,3 +90,43 @@
   background:rgb(115, 255, 0);
   box-shadow: 0 0 15px rgb(115, 255, 0);
 }
+/************************/
+.looading{
+  background:#eaecc5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.looading .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  background:#ffffff;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgb(226, 166, 0);
+  text-transform: uppercase;
+}
+.looading .container button{
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: rgb(226, 166, 0);
+  box-shadow: 0 0 15px rgb(226, 166, 0);
+}
+.looading .container button{
+  outline:none !important;
+}
+.looading .container button:hover{
+  background:rgb(226, 166, 0);;
+}
+.user-form input{
+  border-radius: 10px;
+  border: 2px solid rgb(226, 166, 0);
+}
+.user-form input{
+  outline:none !important;
+}

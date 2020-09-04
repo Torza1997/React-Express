@@ -1,19 +1,14 @@
 .table-user{
-    position: relative;
     display: flex;
     justify-content: center;
-}
-
-.table-user {
+    align-items: center;
     font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  table{
-    width: 60%;
-  }
+    width:100%;
+   
+}
   thead{
-      background: #757575;
+      background: rgb(255, 115, 0);
+      
   }
   th{
     color: #FFF;
@@ -21,19 +16,29 @@
   td, th {
     text-align: left;
     padding: 10px 4px;
+    box-shadow: 0 0 15px rgb(226, 166, 0);
+    border-radius:10px;
+    
+    
   }
   tr:nth-child(even) {
-    background-color: #e7f06e;
+    background: rgb(226, 166, 0);
+    color: #FFF;
   }
   table a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius:10px;
-      padding: 8px;
-      background:rgb(117, 117, 117);
+      padding: 2px 0;
+      background:rgb(255, 194, 26);
       color: #FFF;
+      font-size: 1rem;
   }
   table a:hover{
     transition: .5s;
-    background:rgb(255, 225, 124);
+    background:rgb(226, 166, 0);
+    box-shadow: 0 0 15px rgb(226, 166, 0);
     cursor: pointer;
   }
   .user-form{
@@ -50,10 +55,11 @@
     margin:0 10px;
   }
   .user-form >a{
-    background-color: #ffe00f;
+    background-color: rgb(255, 115, 0);
     padding: 10px;
     margin:0 10px;
     border-radius: 20px;
+    box-shadow: 0 0 15px rgb(255, 115, 0);
   }
   .user-form >a:hover{
     cursor: pointer;

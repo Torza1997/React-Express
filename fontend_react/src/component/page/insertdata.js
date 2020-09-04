@@ -56,7 +56,7 @@ export default class Test extends Component{
         const {Users,UserInsert} =this.state;
         return(
             <div style={{textAlign:"center"}}>
-            <h1>USER</h1>
+            <h1>Inmation User</h1>
                 <ul>    
                     <div className ="user-form">
                         <h3>name</h3>

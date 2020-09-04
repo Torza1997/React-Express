@@ -42,9 +42,16 @@ import Axios from 'axios';
             buttonDisbled: true
         })
         try{
-            let res= await Axios.post('/api/login',{
-                username: this.state.username,
-                password: this.state.password
+            let res= await fetch('/login',{
+                method: 'post',
+                headers:{
+                    'Accept':"application/json",
+                    'Content-type':"application/json"
+                },
+                body: JSON.stringify({
+                   username: this.state.username,
+                   password: this.state.password
+                })
             })
             let result =await res.json();
             if(result && result.success){
@@ -52,12 +59,11 @@ import Axios from 'axios';
                 UserStore.username = result.username;
             }else if(result && result.success === false){
                 this.resetFrom();
-                alert(result.msg);
+                alert(result.msg)
             }
         }catch(e){
             console.log(e);
             this.resetFrom();
-
         }
     }
      

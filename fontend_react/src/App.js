@@ -35,7 +35,7 @@ class  App extends React.Component {
 
   async DologOut(){
     try{
-      let res =await fetch('/logout',{
+      let res =await fetch('/loguot',{
         method:'POST',
         headers:{
           'Accecpt':'application/json',
@@ -65,13 +65,14 @@ class  App extends React.Component {
       if(UserStore.isLoggedIn){
       return(
         <div className = 'looading'>
-          <div className ="container">
-                welcome {UserStore.username}
+          <div className ="container"> 
+                <TEST />
                 <SubmitButton 
-                text = {'login'} 
+                text = {'Log Out'} 
                 disabled={false}
-                onClick = {()=>this.DologOut} 
+                onClick = {()=>this.DologOut()} 
                 />
+               <p>amdin {UserStore.username}</p>
           </div>
         </div>
         )
@@ -80,7 +81,7 @@ class  App extends React.Component {
     return (
       <div className = "app">
        <div className ="container">
-          <TEST />
+          <LoginFrom />
        </div>
     </div>
     );
