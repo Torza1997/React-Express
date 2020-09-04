@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background:#eaecc5;
+}
+.loginForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  background:rgb(255, 187, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 20px orange;
+  text-transform: uppercase;
+}
+.inputField ,.submitbutton{
+  margin: 10px 0;
+}
+.inputField input {
+  border:none;
+  border-radius: 10px;
+  height: 30px;
+
+}
+.inputField input:focus{
+  outline:none !important;
+  border:1px solid orange;
+  box-shadow: 0 0 15px yellow;
+
+
+}
+.inputField input::placeholder {
+  padding: 0 5px;
+
+}
+.loginForm .btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background:#FFF;
+  border:none;
+}
+.loginForm .btn:hover{
+  background:rgb(115, 255, 0);
+  box-shadow: 0 0 15px rgb(115, 255, 0);
+}
