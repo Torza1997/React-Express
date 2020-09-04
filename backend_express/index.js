@@ -60,7 +60,6 @@ app.post('/login',(req,res)=>{
         if(data && data.length ===1){
             bcrypt.compare(password,data[0].password,(bcrypt,verified)=>{
                 if(verified){
-                    console.log(data[0].id)
                     req.session.userID = data[0].id;
                     res.json({
                         success:true,
